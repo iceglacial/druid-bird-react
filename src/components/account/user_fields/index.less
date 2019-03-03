@@ -1,0 +1,77 @@
+.sort-list {
+  .disabled {
+    cursor: not-allowed;
+    background-color: rgba(255, 0, 0, .03);
+  }
+  .ant-card-body {
+    padding: 0;
+  }
+  //.ant-list-item{
+  //  padding: 5px 10px;
+  //}
+}
+.ant-tabs-tabpane{
+  .wrap-overlay{
+    padding-bottom: 30px;
+  }
+  .sort-head{
+    text-align: right;
+    margin-top: 10px;
+  }
+}
+
+.sortable-list {
+  .showingFields {
+    .label {
+      font-size: @font-size-sm;
+    }
+  }
+  .hidingFields {
+    margin-top: 20px;
+    .label {
+      font-size: @font-size-sm;
+    }
+  }
+  .ant-card-wider-padding .ant-card-body {
+    padding: 10px 0;
+  }
+}
+
+//可排序列表项
+.ant-card-grid.reorder-item {
+  position: relative;
+  width: 175px;
+  height: 41px;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  .anticon-drag {
+    position: absolute;
+    left: 12px;
+  }
+  .anticon-minus-circle, .anticon-add-circle {
+    position: absolute;
+    right: 10px;
+    display: none;
+  }
+  &.locked {
+    background-color: #eeeeee;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &:hover .anticon-minus-circle {
+    display: initial;
+    color: @red-6;
+  }
+  &:hover .anticon-add-circle {
+    display: initial;
+    color: @green-6;
+  }
+}
+

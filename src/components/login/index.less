@@ -1,0 +1,187 @@
+@import "../../index";
+
+@loginHeaderHeight: 50px;
+@white: #fff;
+//@loginBgPic: '.@{icon-url}bg/bg-login19201080.png';
+#login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  min-height: 560px;
+  background: url('@{base-url}bg/bg-login-pic_694355.png'), url('@{base-url}bg/bg-login_1280780.png');
+  background-repeat: no-repeat;
+  background-position: 13% 55%, center;
+  background-size: auto, cover;
+  overflow: hidden;
+  header {
+    color: @white;
+    height: @loginHeaderHeight;
+    background-color: @primary-color; //rgba(255,255,255,.2);
+  }
+  .brand-content {
+    position: relative;
+  }
+  .brand {
+    //position: absolute;
+    //left: 10px;
+    //top: 0px;
+    //font-size: 3rem;
+    color: @white;
+    width: auto;
+    //padding: 0;
+    //background-color: transparent;
+    &:hover {
+      color: @color-title;
+    }
+    .anticon {
+      font-size: 32px;
+    }
+  }
+  .brand-name {
+    padding-left: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    .brand-body {
+      padding-left: 10px;
+      border-left: 1px solid @colorWhite;
+    }
+    .small {
+      font-size: @fontSmall;
+      opacity: .8;
+    }
+    a {
+      color: @white;
+    }
+  }
+  .language-wrap {
+    float: right;
+    padding: @widthPrimary;
+  }
+  .ant-radio-button-wrapper {
+    background-color: rgba(255, 255, 255, .1);
+    color: #ffffff;
+    &:hover {
+      background-color: rgba(255, 255, 255, .2);
+    }
+  }
+  .ant-radio-button-wrapper-checked, .ant-radio-button-wrapper-checked:hover {
+    color: @primary-color;
+    border-color: #fff;
+    background-color: #fff;
+  }
+  .login-right-box {
+    position: relative;
+    padding-left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 500px;
+  }
+  .login-content:extend(.window-center) {
+    position: relative; //fixed;
+    width: 90%;
+    max-width: 400px;
+    padding: 1.5rem 3rem;
+    color: @colorTitle;
+    background: @white;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    .login-title {
+      font-size: 22px;
+      color: @primary-color;
+      text-align: left;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .ant-input-affix-wrapper {
+      position: relative;
+      .ant-input-prefix {
+        left: 9px;
+        top: 24px;
+        transform: none;
+        .anticon {
+          position: absolute;
+          font-size: 24px;
+          color: @colorGrey;
+        }
+      }
+    }
+    .ant-input {
+      padding-left: 50px;
+      height: 48px;
+      width: 300px;
+    }
+    .rempass {
+      overflow: hidden;
+      font-size: @fontSmall;
+      label .dd {
+        vertical-align: text-top;
+      }
+    }
+    .btn-submit {
+      min-width: 200px;
+      line-height: 30px;
+      height: 44px;
+    }
+    .login-footer {
+      margin-top: 10px;
+      .tips {
+        text-align: center;
+        font-size: @fontSmall;
+        margin-top: 10px;
+      }
+      .find-pwd {
+        color: @primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+  .login-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: @color-grey;
+    .companion {
+      display: none;
+    }
+    p {
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+    p.title {
+      font-size: 16px;
+      letter-spacing: 10px;
+    }
+  }
+}
+
+.ant-form-item-control.has-error, .ant-form-item-control.has-feedback {
+  padding: 2px 2px 10px 2px;
+}
+
+#login.demo-login {
+  .brand-content {
+    .brand {
+      .anticon {
+        display: none;
+      }
+    }
+    .logo-box {
+      width: 300px;
+      height: 50px;
+      background: url("@{base-url}logo/logo_druid_x_h3c_29036.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+  }
+  .login-footer {
+    .companion {
+      display: initial;
+    }
+    .title-en {
+      display: none;
+    }
+  }
+}

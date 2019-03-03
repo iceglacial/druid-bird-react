@@ -1,0 +1,197 @@
+@import "../../../index";
+.pagination>div{
+  float: right;
+  line-height: 34px;
+  margin: 0 5px;
+  &>button{
+    padding: 0;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    &:nth-child(3){
+      cursor: default;
+    }
+  }
+}
+.device-detail-head{
+  margin-left: -5px;
+  margin-right: -5px;
+  .ant-card-bordered{
+    margin: 0 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(212,212,212,0.50);
+    &.no-border:hover{
+      box-shadow: none;
+      border-color: transparent;
+    }
+    &:hover{
+      border-color: @primary-color;
+      z-index: 9;
+    }
+  }
+  .ant-card-body{
+    padding: @widthPrimary;
+    //min-height: 90px;
+    .title{
+      font-size: 16px;
+      font-weight: bold;
+      height: 45px;
+      line-height: 45px;
+      .anticon{
+        font-weight: normal;
+      }
+    }
+    .sub-title{
+      font-size: 80%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      .anticon{
+        font-size: 80%;
+      }
+    }
+    .anticon{
+      margin-right: @widthSmall;
+    }
+    .ant-row [class*='ant-col']{
+      padding: 0;
+    }
+  }
+  .deviceCard{
+    //text-align: center;
+    //justify-content: center;
+    min-width: 220px;
+    .title{
+      text-align: left;
+      span.title{
+        font-size: 30px;
+        color: @primary-color;
+      }
+      .small{
+        font-weight: 400;
+        float: right;
+        color: @color-grey;
+        font-size: @font-size-sm;
+      }
+    }
+    .sampleCard{
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid #f3f3f3;
+    }
+  }
+  .sampleCard{
+    .ant-row-flex.sub-title .item+.item{
+      margin-left: 10px;
+    }
+  }
+  .settingCard{
+    height: 100%;
+    align-items: center;
+  }
+  .biologicalCard{
+    height: 100%;
+    align-items: center;
+    max-width: 25vw;
+    .ant-row-flex.sub-title .item{
+      .limit{
+        max-width: 8vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &+.item{
+        margin-left: 5px;
+      }
+    }
+  }
+}
+.device-data{
+  &.wrap{
+    padding-top: 0;
+  }
+  .ant-tabs-bar{
+    border-bottom: none;
+  }
+  .ant-tabs-content{
+    padding: 10px;
+    background-color: fade(#2a3e4e,5%);
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-container{
+    height: auto;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab{
+    font-size: @font-size-base;
+    border: none;
+    padding: 10px 20px 6px;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active{
+    color: #2a3e4e;
+    background-color: fade(#2a3e4e,5%);
+  }
+}
+.tabs-operation{
+  height: 35px;
+  .item-box{
+    padding: @widthSmall;
+  }
+  .ant-calendar-picker{
+    min-width: 100px;
+  }
+  .ant-calendar-range-picker-input{
+    font-size: @font-size-sm;
+  }
+}
+.ant-tabs-bar .ant-calendar-picker-input.ant-input{
+  padding: 0 5px;
+  border-radius: 5px 0 0 5px;
+}
+.date-picker-btn{
+  height: 28px;
+  padding: 0 7px;
+  margin: 0;
+  line-height: 26px;
+  background: #fff;
+  border: 1px solid #a4a4a4;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor:pointer;
+  outline: none;
+  &:hover{
+    border-color:@blue-color;
+  }
+  &:disabled{
+    color:#9a9a9a;
+    background: #eee;
+    cursor: not-allowed;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .device-detail-head{
+    white-space: nowrap;
+    .ant-card-body{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .title{
+        font-size: 14px;
+      }
+    }
+    .deviceCard{
+      .title span.title{
+        font-size: 24px;
+      }
+
+    }
+    .settingCard,.biologicalCard{
+      .title{
+        font-size: 16px;
+        padding-top: 10px;
+      }
+      .sub-title{
+        display: none;
+      }
+    }
+  }
+}

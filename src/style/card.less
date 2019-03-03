@@ -1,0 +1,208 @@
+.ant-card {
+  .ant-card-body:hover > .hover_action {
+    display: block;
+  }
+  .action-list {
+    position: absolute;
+    display: none;
+    right: 0;
+    bottom: 0;
+    .item {
+      float: left;
+      .ant-btn {
+        color: #fff;
+        border: none;
+        background-color: @primary-color;
+        border-radius: 0;
+        &:hover {
+          color: @color-title;
+        }
+        &.btn-delete:hover {
+          color: @red-6;
+        }
+      }
+    }
+  }
+  .user-info{
+    .title{
+      font-size: @font-size-lg;
+      color: @primary-color;
+    }
+    .item{
+      margin-bottom: @widthPrimary;
+    }
+    .item-has-icon{
+      position: relative;
+      padding-left: 30px;
+      word-break: break-all;
+      .anticon{
+        position: absolute;
+        left: 0;
+        width: 30px;
+        text-align: center;
+      }
+    }
+  }
+  &:hover {
+    .action-list {
+      display: block;
+    }
+  }
+}
+
+.ant-card.card-panel {
+  border-radius: 5px;
+  .ant-card-body {
+    padding: 0;
+    border-radius: 5px;
+    border: 2px solid @color-border;
+  }
+  .item-inline {
+    padding: @widthPrimary @widthPrimary*1.5;
+    &.head {
+      background-color: @color-border-light;
+    }
+  }
+  &.has-header {
+    border: 2px solid @color-border;
+    &:hover {
+      border-color: @color-border;
+    }
+    .ant-card-head {
+      background-color: @color-border-light;
+    }
+    .ant-card-body {
+      border: none;
+      .title {
+        font-size: @font-size-title;
+        color: @color-title;
+      }
+      .item{
+        font-size: @font-size-base;
+      }
+      .ant-card-inner {
+        padding: @widthPrimary;
+      }
+      .user-head {
+        text-align: center;
+        padding: @widthPrimary;
+        .anticon {
+          font-size: 35px;
+          line-height: 1;
+        }
+      }
+    }
+    .user-info{
+      .anticon {
+        color: @color-grey;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+      }
+    }
+    .ant-card-foot {
+      padding: @widthPrimary @widthPrimary*1.5;
+      background-color: @color-border-light;
+    }
+  }
+  .ant-btn-group .ant-btn{
+    height: 35px;
+  }
+}
+
+.ant-btn-group {
+  display: flex;
+  .ant-btn {
+    flex: 1;
+    font-size: @font-size-base;
+  }
+}
+
+.ant-card.device-card {
+  position: relative;
+  //margin-right: @widthPrimary;
+  border-radius: 5px;
+  overflow: hidden;
+  &.active {
+    color: #fff;
+    border-color: @primary-color;
+    .ant-card-body {
+      background-color: @primary-color;
+    }
+    .title {
+      color: #fff;
+    }
+  }
+  &:hover {
+    color: #fff;
+    border-color: @primary-color;
+    .ant-card-body {
+      background-color: @primary-color;
+    }
+    .title {
+      color: #fff;
+    }
+  }
+  .ant-card-body {
+    padding: @widthPrimary;
+    background-color: @background-color-base;
+  }
+  .title {
+    font-size: @font-size-lg;
+    font-weight: bold;
+    color: @primary-color;
+  }
+  .content {
+    font-size: 80%;
+    .break-line {
+      height: 1em*1.5*2;
+    }
+  }
+}
+
+.break-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.simple-card {
+  display: inline-block;
+  cursor: pointer;
+  .hover_delete {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    .ant-btn {
+      padding: 0;
+      height: 28px;
+      width: 28px;
+      top: -14px;
+      right: -14px;
+      background-color: @red-6;
+      color: #fff;
+      border-radius: 50%;
+    }
+  }
+  &:hover .hover_delete {
+    display: block;
+  }
+}
+
+.hover_action {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  color: #fff;
+  z-index: 9;
+  &:hover {
+    color: @red-6;
+  }
+}

@@ -1,0 +1,453 @@
+@font-size-logo: 38px;
+
+.App, .App-layout {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  .loading {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    display: block;
+    background-color: @primary-color;
+    z-index: 999;
+  }
+}
+
+.main-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 54px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+//.react-grid-Container{
+//  width: 100%;
+//}
+.ant-layout {
+  height: 100%;
+  &.ant-layout-has-sider {
+    display: flex;
+  }
+  &.layout-collapsed {
+    .brand-box {
+      width: @menu-collapsed-width; //80px
+    }
+    .brand a .brand-logo .anticon {
+      font-size: 24px;
+    }
+  }
+}
+
+.ant-layout-header {
+  color: #81949F;
+  padding: 0;
+  height: @brandHeight;
+  line-height: @brandHeight;
+  background-color: #fff;
+  box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 199;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .ant-row-flex {
+    height: @brandHeight;
+    width: 100%;
+  }
+  .user-head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 0 1px #fff;
+    margin-left: @widthPrimary;
+    background-position: center;
+    background-size: cover;
+  }
+  .search-box {
+    .simple-search {
+      display: none;
+    }
+  }
+}
+
+.ant-layout-content {
+  height: 100%;
+  overflow-x: hidden;
+  //margin: @widthPrimary;
+  overflow-y: auto;
+}
+
+.app-device {
+  height: 100%;
+  .fRight{
+    float: right;
+  }
+  .canClick{
+    cursor: pointer;
+  }
+}
+
+select {
+  padding: 5px;
+}
+
+.user-btn {
+  margin-right: 30px;
+}
+
+.wrap {
+  padding: @widthPrimary;
+}
+
+.wrap-overlay {
+  height: 100%;
+  overflow-y: auto;
+}
+
+//.ant-layout-sider,.ant-menu-dark, .ant-menu-dark .ant-menu-sub{
+//  background-color: #293E4F;
+//}
+.ant-layout-header {
+  .inline.message {
+    cursor: pointer;
+    .ant-badge-count {
+      font-size: 12px;
+    }
+  }
+  .quick-show-box {
+    .anticon {
+      font-size: @font-size-title;
+      vertical-align: middle;
+    }
+  }
+}
+
+.brand-box {
+  width: 200px;
+  background-color: @primary-color;
+}
+
+.brand {
+  width: 100%;
+  display: inline-block;
+  //width: 200px;
+  //height: @brandHeight;
+  //padding: 12px 0;
+  //background-color: @primary-color;
+  a {
+    color: #fff;
+    &:hover {
+      color: rgba(255, 255, 255, .9);
+    }
+    .brand-logo {
+      .anticon {
+        font-size: @font-size-logo;
+        vertical-align: middle;
+      }
+    }
+    .brand-body {
+      padding-left: 10px;
+      line-height: 1;
+      .brand-name-cn {
+        font-size: 18px;
+        letter-spacing: .15em;
+      }
+      .brand-name-en {
+        margin-top: 5px;
+        font-size: @fontSmall;
+        letter-spacing: .1em;
+        font-weight: 400;
+      }
+    }
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.nav-box {
+  flex: 1;
+  padding-left: @widthDouble;
+  padding-right: @widthDouble;
+  .ant-input {
+    border: 2px solid #e7ecee;
+    border-radius: 100px;
+    height: 32px;
+  }
+  .ant-input-search-button {
+    //margin-top: -1px;
+    margin-right: 2px;
+    border-radius: 100px;
+  }
+}
+
+.inline {
+  display: inline-block;
+  .name {
+    font-size: @font-size-title;
+    color: #fff;
+    padding-left: @widthDouble;
+    line-height: 28px;
+    border-left: 2px solid #fff;
+  }
+  & + .inline {
+    margin-left: @widthDouble;
+  }
+}
+
+.user-box {
+  //color: #fff;
+  .anticon {
+    margin-right: @widthSmall;
+  }
+}
+
+.collapsed-turn {
+  font-size: @font-size-base;
+  text-align: center;
+  padding: @font-size-base;
+  color: #fff;
+  .circle {
+    display: inline-block;
+    line-height: 1;
+    background-color: rgba(0, 0, 0, .3);
+    width: @font-size-base * 2;
+    height: @font-size-base * 2;
+    border-radius: 50%;
+    padding: 6px;
+  }
+}
+
+.ant-menu.ant-menu-root {
+  .ant-menu-item, .ant-menu-submenu-title {
+    font-size: 15px;
+  }
+  .ant-menu-submenu {
+    .ant-menu-item {
+      font-size: 13px;
+      .anticon {
+        display: none;
+      }
+    }
+  }
+}
+
+//.ant-menu-inline-collapsed > .ant-menu-item .anticon + span, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item .anticon + span, .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title .anticon + span {
+//  max-width: 0;
+//  display: inline-block;
+//  opacity: 0;
+//}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+  background: #1b2a37;
+}
+
+.ant-layout-sider-collapsed {
+  .brand-body {
+    display: none;
+  }
+}
+
+.ant-dropdown {
+  p {
+    white-space: nowrap;
+  }
+  .ant-card-body {
+    text-align: center;
+    padding: @widthPrimary;
+    line-height: 30px;
+    min-width: 140px;
+  }
+  .card-username {
+    text-align: center;
+    font-size: @font-size-lg;
+  }
+  .ant-dropdown-menu {
+    height: auto;
+    max-height: 300px;
+  }
+  .ant-card-footer {
+    border-top: 1px solid @color-grey-light;
+    .ant-btn {
+      height: 40px;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+
+.ant-row-flex {
+  //height: 100%;
+  &.align-item-center {
+    align-items: center;
+  }
+}
+
+.slider-nav {
+  &.ant-layout-sider-collapsed {
+    .ant-menu-item, .ant-menu-submenu {
+      .anticon + span {
+        max-width: 0;
+        display: inline-block;
+        opacity: 0;
+      }
+    }
+    .ant-menu-submenu .ant-menu-item .anticon + span {
+      max-width: none;
+      opacity: 1;
+    }
+  }
+  .ant-menu, .ant-menu-submenu {
+    .anticon {
+      padding: 0;
+      margin-right: 5px;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}
+
+.ant-tooltip.ant-menu-inline-collapsed-tooltip .ant-tooltip-inner .anticon {
+  display: none;
+  width: 0;
+}
+
+.smart-search .btn-ghost {
+  cursor: pointer;
+}
+
+.user-dropdown {
+  width: 240px;
+  .ant-dropdown-menu {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    .custom-body {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 5px;
+      overflow: hidden;
+      .custom-head {
+        padding: @widthDouble;
+        background-color: #8c8987;
+        background-color: @primary-color;
+        text-align: center;
+        color: #fff;
+      }
+      .custom-content {
+        padding: @widthPrimary;
+        font-size: 12px;
+        .anticon {
+          width: 20px;
+          text-align: center;
+          margin-right: 5px;
+          display: inline-block;
+        }
+        .inline-text {
+          max-width: 180px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .custom-foot {
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+      .ant-btn {
+        width: 100%;
+        padding: @widthPrimary;
+        height: auto;
+      }
+    }
+  }
+}
+
+.ant-badge {
+  a {
+    text-decoration: none;
+  }
+  &:active a, &:hover a, &:focus a, &:visited a {
+    text-decoration: none;
+  }
+}
+
+//演示平台
+.ant-layout-header.linear-header {
+  color: #fff;
+  background-image: linear-gradient(90deg, #58B6C4, #5AD4E7);
+  .ant-row-flex {
+    justify-content: flex-end;
+  }
+  .brand-box {
+    width: auto;
+    .brand {
+      height: 100%;
+      .flex-row {
+        height: 100%;
+      }
+    }
+    .brand-logo {
+      width: 300px;
+      height: 36px;
+      margin-left: 20px;
+      background: url('@{base-url}logo/logo_druid_x_h3c_29036.png') no-repeat;
+      .anticon {
+        display: none;
+      }
+    }
+  }
+  .search-box {
+    margin-right: 10px;
+  }
+  .inline.search {
+    .simple-search {
+      display: initial;
+    }
+    .input-search {
+      display: none;
+    }
+    &:hover {
+      .simple-search {
+        display: none;
+      }
+      .input-search {
+        display: initial;
+      }
+    }
+  }
+  .quick-show-box {
+    .ant-badge {
+      color: #fff;
+    }
+    a {
+      color: #fff;
+    }
+    .ant-radio-button-wrapper {
+      background-color: @primary-color;
+      color: #fff;
+      border: none;
+      &.ant-radio-button-wrapper-checked {
+        color: @primary-color;
+        background-color: #fff;
+      }
+    }
+  }
+}

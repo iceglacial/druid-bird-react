@@ -1,0 +1,100 @@
+@import "detail/index";
+.ant-tabs-bar{
+  margin-bottom: 0;
+}
+.ant-radio-group-large .ant-radio-button-wrapper {
+  height: 37px;
+  line-height: 35px;
+  padding: 0 5px;
+  min-width: 110px;
+}
+.has-even-shadow{
+  padding: 0;
+  .sub-title{
+    color: @color-sub-title;
+    padding: @widthPrimary;
+    margin-bottom: @widthPrimary;
+    border-bottom: 1px solid @border-color-base;
+  }
+  .ant-row:nth-child(even){
+    background-color: @background-color-base;
+  }
+}
+.ant-modal-header.has-title-circle{
+  position: relative;
+  height: 120px;
+  color: @color-title;
+  font-size: @font-size-sm;
+  .title{
+    font-size: 24px;
+  }
+  .circle-wrap{
+    position: absolute;
+    left: @widthPrimary;
+    top: @widthPrimary;
+    .title-circle{
+      color: #fff;
+      background-color: @color-title;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //font-weight: bold;
+    }
+  }
+  .modal-head-body{
+    padding-left: 110px;
+    .ant-calendar-picker{
+      min-width: 170px;
+    }
+  }
+  .item+.item{
+    margin-left: @widthSmall;
+  }
+  .ant-form-item-label{
+    float: left;
+  }
+}
+.ant-modal-inner{
+  .mode-box{
+    padding: @widthDouble 0;
+  }
+  .table-box{
+    border-top: 1px solid @color-border;
+    .ant-row{
+      padding: @widthPrimary;
+      &:nth-child(even){
+        background-color: @color-background-light;
+      }
+    }
+  }
+}
+.biological-box{
+  .has-textarea .ant-form-item{
+    height: auto;
+  }
+  .ant-form-item{
+    margin-bottom: 0;
+    height: 47px;
+    //overflow: hidden;
+    .ant-form-item-control{
+      //padding-bottom: 0;
+    }
+  }
+  .ant-form-item-control-wrapper .ant-form-item-control{
+    padding: 2px @widthSmall @widthPrimary @widthSmall ;
+  }
+}
+.popover-inner{
+  .item-box{
+    margin-bottom: @widthDouble;
+    h4{
+      margin-bottom: @widthPrimary;
+    }
+  }
+}
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-wrap{
+  margin-bottom: 1px;
+}

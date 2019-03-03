@@ -1,0 +1,320 @@
+@blue: #69BECB;
+
+#Visualization {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px 20px 0 20px;
+    font-family: 'PingFangSC-Medium', 'PingFangSC-Regular', serif;
+    //css reset
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+    //card
+    .chartFullScreen{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin:0;
+        padding: 0;
+        z-index: 299;
+    }
+    .ant-card {
+        min-width: 900px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        width: 100%;
+    }
+    .ant-card-extra {
+        padding: 0;
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        z-index: 9;
+    }
+    //header-top
+    .header__top-collapse {
+        cursor: pointer;
+        &:hover {
+            color: @blue;
+        }
+    }
+    .ant-tabs-nav {
+        height: 41px;
+        font-size: 14px;
+    }
+    .ant-card-head {
+        min-height: 40px;
+    }
+    .ant-tabs-tab {
+        padding: 10px 16px;
+    }
+    .ant-tabs-tab-active {
+        font-weight: bold;
+    }
+    .ant-tabs-ink-bar {
+        height: 3px;
+    }
+    //body
+    .ant-card-body {
+        padding: 24px 32px 15px 32px;
+    }
+    .select-block__title {
+        width: 60px;
+        height: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+    .select-block {
+        position: relative;
+        margin-bottom: 30px;
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        & > div {
+            float: left;
+            &:first-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+            }
+            &:last-child {
+                margin-left: 60px;
+            }
+        }
+    }
+    .device-select {
+        line-height: 27px;
+    }
+    .time-range-select {
+        line-height: 27px;
+    }
+    .ant-divider-horizontal {
+        margin: 15px 0;
+    }
+    .date-picker {
+        width: 380px;
+        display: inline-block;
+    }
+    .radio-item_mark {
+        font-size: 12px;
+        color: #ccc;
+        position: absolute;
+        top: 17px;
+        left: 24px;
+    }
+    .ant-radio-wrapper {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+    .data-type-select .ant-radio-wrapper {
+        & > span:nth-child(1) {
+            transform: translateY(-5px);
+        }
+        & > span:nth-child(2) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100px;
+            display: inline-block;
+        }
+    }
+    .data-type-select .ant-checkbox-wrapper {
+        margin-right: 8px;
+        & > span:nth-child(1) {
+            transform: translateY(-5px);
+        }
+        & > span:nth-child(2) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100px;
+            display: inline-block;
+        }
+        & + .ant-checkbox-wrapper{
+            margin-left: 0;
+        }
+    }
+    .ant-radio-wrapper-long {
+        width: 250px;
+    }
+    .single {
+        .ant-checkbox-wrapper {
+            float: left;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .ant-checkbox-wrapper:nth-child(3) {
+            clear: left;
+        }
+        .ant-checkbox-wrapper:nth-child(6) {
+            clear: left;
+        }
+        .ant-checkbox-wrapper:nth-child(8) {
+            clear: left;
+        }
+        .ant-checkbox-wrapper:nth-child(10) {
+            clear: left;
+        }
+        .ant-checkbox-wrapper:nth-child(11) {
+            clear: left;
+        }
+    }
+    .multiple .multiple__data-type {
+        .ant-radio-wrapper {
+            float: left;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .ant-radio-wrapper:nth-child(3) {
+            clear: left;
+        }
+        .ant-radio-wrapper:nth-child(6) {
+            clear: left;
+        }
+        .ant-radio-wrapper:nth-child(8) {
+            clear: left;
+        }
+        .ant-radio-wrapper:nth-child(10) {
+            clear: left;
+        }
+        .ant-radio-wrapper:nth-child(11) {
+            clear: left;
+        }
+
+    }
+
+    //header-bottom
+    .header__bottom {
+        text-align: right;
+    }
+    .header__bottom-btn {
+        width: 140px;
+        height: 32px;
+        background-image: linear-gradient(-102deg, #50BED2 0%, #69BECB 100%);
+        border: 2px solid #69BECB;
+        box-shadow: 1px 2px 2px 0 rgba(84, 154, 165, 0.30);
+        border-radius: 100px;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .selectDevice {
+        & > div {
+            float: left;
+        }
+        .selectDevice__notice {
+            clear: both;
+            font-size: 12px;
+            color: #CCCCCC;
+            line-height: 14px;
+            padding-top: 3px;
+        }
+        .ant-input {
+            width: 155px;
+            height: 28px;
+            border-radius: 100px;
+        }
+        .deviceBtn {
+            width: 60px;
+            height: 28px;
+            border: 1px solid #CCCCCC;
+            border-radius: 100px;
+            margin-right: 10px;
+            &:hover {
+                border-color: @blue;
+            }
+        }
+        .plus {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #CCCCCC;
+            border-radius: 100px;
+            padding: 0;
+            line-height: 26px;
+            & > i {
+                font-size: 16px;
+            }
+            &:hover {
+                border-color: @blue;
+            }
+        }
+        .closeBtn {
+            font-size: 12px;
+            -webkit-transform: scale(0.5);
+            margin-left: -3px;
+            display: inline-block;
+        }
+    }
+    .multiple .selectDevice .deviceBtn {
+        &::after {
+            content: " ";
+            display: inline-block;
+            color: @blue;
+            margin-left: -3px;
+        }
+        &:hover {
+            border-color: @blue;
+            &::after {
+                content: "×";
+            }
+        }
+    }
+}
+
+.Chart {
+    height: 100%;
+    margin: 15px 0;
+    padding: 15px 0;
+    .ant-card {
+        height: 100%;
+    }
+    .ant-card-body {
+        height: 100%;
+    }
+    .ant-spin-nested-loading {
+        height: 100%;
+    }
+    .chart__top-btn{
+        width: 140px;
+        height: 32px;
+        background-image: linear-gradient(-102deg, #50BED2 0%, #69BECB 100%);
+        border: 2px solid #69BECB;
+        box-shadow: 1px 2px 2px 0 rgba(84, 154, 165, 0.30);
+        border-radius: 100px;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        z-index: 9;
+    }
+
+}
+
+.ant-dropdown .ant-dropdown-menu {
+    width: 100%;
+    padding: 0;
+    .red {
+        background: transparent;
+        color: #EF6630;
+    }
+}
+
+.ant-dropdown-menu-item:hover {
+    background: @blue;
+    color: #fff;
+}

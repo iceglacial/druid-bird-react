@@ -1,0 +1,339 @@
+@import "geofence/index";
+
+@searchBoxWidth: 220px;
+@color-map: #293E4F;
+.wrap-full {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    //谷歌不支持对地图控件样式定制，
+    .gm-style-mtc>div{
+        font-size: 14px !important;
+        &>div{
+            font-size: 14px !important;
+        }
+    }
+    #distanceCloseBtn{
+        font-size: 12px;
+    }
+}
+
+.mapAction {
+    position: absolute;
+    padding: @widthSmall;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    //background-color: #fff;
+    .action-body {
+        .map-item {
+            display: inline-block;
+            color: #fff;
+            padding: @widthSmall @widthDouble;
+            border-radius: 100px;
+            background-color: fade(@color-map, 75%);
+            .item-inner {
+                height: 18px;
+                line-height: 18px;
+            }
+            & + .map-item {
+                margin-left: @widthPrimary;
+            }
+            &.is-act {
+                &:hover {
+                    background-color: @primary-color;
+                }
+            }
+            &.close {
+
+            }
+        }
+    }
+}
+
+.map-search-box {
+    position: absolute;
+    padding: @widthSmall;
+    width: @searchBoxWidth;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    .result-tips {
+        line-height: 2;
+        padding-left: @widthPrimary;
+        padding-right: @widthPrimary;
+    }
+    .search-body-wrap {
+        background-color: rgba(255, 255, 255, .95);
+        border-radius: @widthSmall;
+    }
+    .search-quick-show {
+        line-height: 2;
+        .item {
+            margin: 2px;
+        }
+    }
+    .search-body {
+        .body-list {
+            max-height: 50vh;
+            overflow-y: auto;
+            border-top: 1px solid @color-border;
+            .item {
+                color: @color-title;
+                padding: @widthSmall;
+                .title {
+                    font-size: @font-size-lg;
+                }
+                .sub-title {
+                    font-size: @font-size-sm;
+                }
+                &.range-out {
+                    color: @primary-color;
+                }
+                & + .item {
+                    border-top: 1px solid @color-grey-light;
+                }
+                &.active, &:hover {
+                    background-color: @background-color-base;
+                }
+            }
+        }
+    }
+}
+
+.shape_menu {
+    background-color: #fff;
+    border: 1px solid @color-grey-light;
+    border-radius: @widthSmall;
+    .shape_item {
+        padding: @widthPrimary @widthDouble;
+        + .shape_item {
+            border-top: 1px solid @color-grey-light;
+        }
+        &:hover {
+            background-color: rgba(157, 157, 157, .1);
+        }
+    }
+}
+
+.marker-window {
+    color: @color-title;
+    .marker-window-head {
+        font-size: @font-size-sm;
+        margin-bottom: @widthPrimary;
+        border-bottom: 1px solid @color-border;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        .item {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: @color-title;
+            margin-bottom: @widthSmall;
+            .small {
+                font-size: @font-size-sm;
+                font-weight: normal;
+            }
+        }
+        .sub-title {
+            color: @color-sub-title;
+            text-align: right;
+        }
+    }
+    .marker-window-body {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        .item {
+            padding: @widthSmall;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            div {
+                word-break: keep-all;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.map-state {
+    position: absolute;
+    right: 10px; //90px
+    top: @widthPrimary;
+    color: @color-grey;
+    //padding-right: 50px;
+    transition: all ease-in-out .4s;
+    .map-close {
+        position: absolute;
+        display: none;
+        right: -45px;
+        top: 0;
+        color: rgba(0, 0, 0, .3);
+        .anticon {
+            font-size: 40px;
+            line-height: 1;
+        }
+        &:hover {
+            color: rgba(0, 0, 0, .5);
+        }
+    }
+    .state-body {
+        height: 0;
+        opacity: 0;
+        display: none;
+    }
+    .ant-tabs-nav {
+        display: flex;
+        .ant-tabs-tab {
+            flex: 1;
+            text-align: center;
+        }
+    }
+    .ant-tabs-content {
+        overflow: hidden;
+    }
+    &.open .state-body, .state-inner:hover .state-body {
+        height: auto;
+        opacity: 1;
+        display: block;
+    }
+    .state-inner {
+        width: 298px;
+        position: relative;
+        background-color: rgba(255, 255, 255, .95);
+        border-radius: 5px;
+        &:hover {
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            .block-ding {
+                display: block;
+            }
+        }
+    }
+    .state-head {
+        line-height: 30px;
+        padding: @widthSmall 50px @widthSmall @widthPrimary;
+        .block-ding {
+            display: none;
+            position: absolute;
+            right: @widthPrimary;
+            top: @widthSmall;
+            .anticon {
+                font-size: 20px;
+            }
+        }
+        .ant-btn-circle {
+            position: absolute;
+            right: @widthPrimary;
+            top: @widthSmall;
+            float: right;
+            border-radius: 50%;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .25);
+            border-color: transparent;
+            &:hover {
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+    }
+    .action-box {
+        padding: @widthPrimary;
+        border-top: 1px solid @color-border;
+        .item-act {
+            padding-top: @widthPrimary;
+            padding-bottom: @widthPrimary;
+            min-width: 200px;
+            .title {
+                padding-bottom: @widthSmall;
+                color: @color-grey;
+            }
+            .ant-btn-block {
+                width: 100%;
+            }
+            .ant-radio-group {
+                width: 100%;
+                display: flex;
+                .ant-radio-button-wrapper {
+                    flex: 1;
+                    text-align: center;
+                    padding: 0 5px;
+                    white-space: nowrap;
+                }
+            }
+            .ant-slider {
+                width: 200px;
+            }
+            table td {
+                padding: @widthSmall;
+                &:first-child {
+                    padding-top: 12px;
+                }
+            }
+            & + .item-act {
+                border-top: 1px solid @border-color-base;
+            }
+        }
+    }
+}
+
+.map-timeline {
+    padding-left: @widthDouble;
+    padding-right: @widthDouble;
+}
+
+.timeline-picker {
+    position: absolute;
+    width: 80%;
+    bottom: 80px;
+    padding-left: @widthPrimary;
+    padding-right: @widthPrimary;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 100px;
+    left: 10%;
+    right: 10%;
+    z-index: 9;
+    &:hover {
+        background-color: rgba(255, 255, 255, .8);
+    }
+}
+
+.timeline-picker, .map-timeline, .map-range {
+    .ant-slider-rail, .ant-slider-track {
+        background-color: fade(@primary-color, 30);
+    }
+    .ant-slider-dot-active {
+        border-color: fade(@primary-color, 80);
+        background-color: #fff;
+    }
+    .ant-slider-handle {
+        border-color: @primary-color;
+        box-shadow: 0 0 0 2px @primary-color;
+    }
+}
+
+.map-range {
+    td:first-child {
+        display: inline-block;
+        width: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .ant-slider-rail {
+        background-color: @background-color-base;
+    }
+}

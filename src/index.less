@@ -1,0 +1,823 @@
+@import '~antd/dist/antd';
+@import "style/index";
+@import "components/index";
+@import "common/index";
+@import "style/iconfont.css";
+
+//@icon-url: "/static/media/iconfont"; //修改icon地址到本地
+//@iconfont-css-prefix: druid;`
+@base-url: '/images/';
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: @bgColor;
+    /*font-family: PingFangSC-Regular, sans-serif;*/
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    /*font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;*/
+    /*font-family: "Microsoft YaHei";*/
+    font-size: @font-size-base;
+    font-weight: 400;
+}
+
+#root {
+    .react-grid-Row {
+        contain: none !important;
+    }
+    :global(.anticon) { /* :global() 是为了覆盖全局class .anticon 的样式 */
+        &:before {
+            /* 优先调用 自定义 字体 */
+            font-family: "anticon", "iconBird" !important;
+            /* 默认样式是这样
+                font-family: "anticon" !important;
+            */
+        }
+    }
+    .anticon:before {
+        font-style: normal;
+    }
+}
+
+//images
+@nothingBg: '@{base-url}bg/nothing_265202.png';
+@loginBgPic: '@{base-url}bg/bg-login19201080.png';
+.ant-tooltip .ant-tooltip-inner {
+    background-color: @layout-header-background;
+}
+
+//.ant-select-arrow:before, .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
+//  content: '\E711';
+//  font-size: 12px;
+//}
+
+.ant-calendar-picker-icon:after {
+    content: '\E735';
+    font-size: 12px;
+}
+
+.ant-modal-close-x:before {
+    content: '\E733';
+}
+
+.ant-pagination-next .ant-pagination-item-link:after {
+    content: '\e71f';
+}
+
+.ant-pagination-prev .ant-pagination-item-link:after {
+    content: '\e720';
+}
+
+.ant-calendar-range-picker-separator {
+    height: 18px;
+    overflow: hidden;
+}
+
+.anticon-spin:before {
+    display: inline-block;
+    -webkit-animation: loadingCircle 1s infinite linear;
+    animation: loadingCircle 1s infinite linear;
+}
+
+.ant-message .anticon {
+    margin-right: @widthPrimary;
+}
+
+.ant-input-number {
+    border-color: @color-grey;
+}
+
+.input-search, .ant-input-search {
+    border-radius: 100px;
+}
+
+//colors------
+.danger, .red {
+    color: @red-6;
+}
+
+.primary {
+    color: @primary-color;
+}
+
+.yellow, .warning {
+    color: @yellow-6;
+}
+
+.orange {
+    color: @orange-6;
+}
+
+.green {
+    color: @green-6;
+}
+
+.light, .grey {
+    color: @color-grey;
+}
+
+.blue, .success {
+    color: @blue-6;
+}
+
+//temperature
+.temperature.black {
+    color: @low;
+}
+
+.temperature.ice {
+    color: @zero;
+}
+
+.temperature.yellow {
+    color: @high;
+}
+
+.temperature.red {
+    color: @toHot;
+}
+
+//colors----end
+.anticon + .anticon {
+    margin-left: 5px;
+}
+
+.ant-form-explain {
+    font-size: 12px;
+    z-index: 99;
+}
+
+.react-grid-Cell:focus {
+    outline: 1px solid @primary-color;
+    outline-offset: -1px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.content-wrap {
+    max-width: @maxContentWidth;
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.ant-table-wrapper {
+    background-color: #fff;
+}
+
+.small {
+    font-size: @fontSmall;
+}
+
+.ant-card.small {
+    &.small {
+        .ant-card-body {
+            padding: @widthPrimary;
+        }
+    }
+    &.active {
+        border-color: @primary-color;
+    }
+    .ant-card-body {
+        word-break: break-all;
+    }
+}
+
+.ant-input {
+    color: @colorTitle;
+    padding: 6px 12px;
+    box-shadow: none;
+    border-radius: 5px;
+    &:hover, &:focus {
+        box-shadow: none;
+        border-color: @primary-color;
+    }
+}
+
+.ant-select-selection, .ant-input {
+    border-color: @colorGrey;
+}
+
+.ant-input-affix-wrapper {
+    &:hover .ant-input:not(.ant-input-disabled) {
+        border-color: @primary-color;
+    }
+}
+.react-grid-Row {
+    contain: none !important;
+}
+
+.ant-form-item {
+    margin-bottom: 10px;
+}
+
+.btn-submit, .btn-dark {
+    padding: 6px 12px;
+    margin: 0 auto;
+    background-color: @colorTitle;
+    border-color: @colorTitle;
+    color: @colorWhite;
+    &:hover {
+        color: #fff;
+        border-color: @colorTitle - @colorShadow;
+        background-color: @colorTitle - @colorShadow;
+    }
+}
+
+.vertical-center-modal {
+    text-align: center;
+    white-space: nowrap;
+    .ant-modal {
+        display: inline-block;
+        vertical-align: middle;
+        top: 0;
+        text-align: left;
+    }
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 0;
+    }
+}
+
+.as-btn {
+    display: inline-block;
+}
+
+.ant-btn {
+    border-radius: @widthSmall;
+    & + .ant-btn, & + .ant-btn-link {
+        margin-left: @widthSmall;
+    }
+    &.ant-btn-grey {
+        color: #fff;
+        border-color: #7D7A78;
+        background-color: #7D7A78;
+        &:hover {
+            background-color: #8c8987;
+        }
+    }
+}
+
+.item-box {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    &.center {
+        text-align: center;
+    }
+}
+
+.block-overflow {
+    display: block;
+    overflow: hidden;
+}
+
+.mg-bottom {
+    margin-bottom: @widthPrimary;
+}
+
+.mg-top {
+    margin-top: @widthPrimary;
+}
+
+.mg-left {
+    margin-left: @widthPrimary;
+}
+
+.mg-right {
+    margin-right: @widthPrimary;
+}
+
+.pd-top {
+    padding-top: @widthPrimary;
+}
+
+.pd-left {
+    padding-left: @widthPrimary;
+}
+
+.pd-bottom {
+    padding-bottom: @widthPrimary;
+}
+
+.ant-input-number {
+    width: 100%;
+}
+
+.ant-radio-group {
+    &.card-type {
+        .ant-radio-button-wrapper {
+            color: #fff;
+            background-color: #d8d8d8;
+            &.ant-radio-button-wrapper-checked {
+                background-color: @primary-color;
+            }
+        }
+    }
+}
+
+.content-head {
+    .ant-btn, .ant-radio-group {
+        margin-left: 5px;
+        .ant-radio-button-wrapper {
+            padding: 0 @widthPrimary;
+        }
+    }
+}
+
+.body-title {
+    font-size: @font-size-title;
+    min-height: @font-size-title;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//小卡片
+.collapsed-body {
+    display: none;
+}
+
+.col-collapsed {
+    .collapsed-body {
+        display: block;
+        padding: @widthPrimary;
+        background-color: #fff;
+        //border-top: 5px solid @primary-color;
+        //border-top-left-radius: @widthSmall;
+        //border-top-right-radius: @widthSmall;
+    }
+    .ant-row {
+        [class*='ant-col'] {
+            .ant-card {
+                border-top: 5px solid @primary-color;
+                &.user-card {
+                    border-top: 5px solid @primary-color;
+                }
+            }
+            .user-card {
+                .head-image {
+                    height: 55px;
+                    width: 55px;
+                }
+                .col-foot {
+                    .ant-btn {
+                        height: 30px;
+                    }
+                }
+            }
+            .card-head {
+                display: none;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+            .col-body {
+                display: none;
+            }
+        }
+    }
+}
+
+.card-list {
+    a {
+        color: @color-title;
+    }
+    &.user-card {
+        border-radius: @widthSmall;
+        box-shadow: 0 3px 10px fade(@tipsColor, 50);
+        .head-image {
+            text-align: center;
+            height: @widthDouble*3 - 2px;
+            width: @widthDouble*3 - 2px;
+            font-size: @widthDouble*2 - 2px;
+            border-radius: @widthSmall;
+            background-color: @color-grey-light;
+        }
+        .card-head {
+            position: relative;
+            background-color: @primary-color;
+            text-align: center;
+            padding: @widthDouble;
+            height: @widthDouble*3;
+            border-top-left-radius: @widthSmall;
+            border-top-right-radius: @widthSmall;
+            .head-image {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -@widthDouble*1.5;
+                box-shadow: 0 0 0 4px #fff;
+            }
+        }
+        .col-body {
+            padding-top: @widthDouble*1.5;
+            padding-bottom: @widthPrimary;
+            border-radius: 0;
+            .quick-info {
+                font-size: @font-size-lg;
+                .small {
+                    color: @colorTip;
+                }
+            }
+            .info {
+                font-size: @font-size-sm;
+                [class*='ant-col'] {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    min-height: @font-size-sm*1.5;
+                }
+            }
+            &:hover {
+                border-color: #fff;
+                box-shadow: none;
+            }
+        }
+        .col-foot {
+            .ant-btn {
+                height: 45px;
+                & + .ant-btn {
+                    border-left: 1px solid @color-grey-light;
+                }
+            }
+        }
+        .ant-modal-close {
+            opacity: 0;
+        }
+        &:hover .ant-modal-close {
+            opacity: 1;
+        }
+    }
+    &.ant-card {
+        border: 1px solid #fff;
+        border-radius: @widthSmall;
+        &:hover {
+            border-color: @primary-color;
+            .ant-modal-close {
+                display: block;
+            }
+        }
+        &.selected {
+            box-shadow: 0 0 0 2px @primary-color;
+        }
+        &.user-card {
+            border: 0;
+        }
+        .ant-card-body {
+            padding: 0;
+        }
+        .ant-modal-close {
+            display: none;
+        }
+    }
+    a {
+        :active, :focus {
+            text-decoration: none;
+        }
+        .biological-card {
+            color: @titleColor;
+        }
+    }
+    .biological-card {
+
+    }
+    .col-body {
+        border: 1px solid #fff;
+        border-radius: @widthSmall;
+        background-color: #fff;
+        cursor: pointer;
+        .wp {
+            padding: @widthPrimary;
+        }
+        .ant-modal-close {
+            opacity: 0;
+        }
+        &:hover .ant-modal-close {
+            opacity: 1;
+        }
+        .state-wp {
+            color: @color-grey-light;
+            margin-top: 5px;
+            .anticon {
+                font-size: @font-size-lg * 2;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+        .body-wp {
+            min-height: @font-size-sm * 1.5;
+            label {
+                font-size: @font-size-sm;
+            }
+        }
+        .action-wp {
+            margin-top: @widthPrimary;
+            text-align: center;
+        }
+        .grid-label {
+            font-size: @font-size-sm;
+            line-height: 1.5;
+            height: @font-size-sm*1.5;
+            white-space: nowrap;
+            &.description {
+                height: @font-size-sm * 1.5 * 2;
+            }
+        }
+        //&:hover{
+        //  border-color: @primary-color;
+        //  box-shadow: 0 1px 5px @tipsColor;
+        //}
+        //&.on-select{
+        //  border-width: 2px;
+        //  &.active,&.active:hover{
+        //    border-color: @primary-color;
+        //    box-shadow: inset 0 0 0 1px @primary-color, 0 1px 5px @tipsColor;
+        //  }
+        //}
+    }
+    .col-foot {
+        border-top: 1px solid @color-grey-light;
+        .ant-row {
+            margin-left: 0;
+            margin-right: 0;
+            [class*='ant-col'] {
+                padding: 0;
+                & + [class*='ant-col'] {
+                    border-left: 1px solid @color-grey-light;
+                }
+                &:first-child .ant-btn {
+                    border-bottom-left-radius: @widthSmall;
+                }
+                &:last-child .ant-btn {
+                    border-bottom-right-radius: @widthSmall;
+                }
+            }
+        }
+        .ant-btn {
+            border: none;
+            height: 30px;
+            width: 100%;
+            border-radius: 0;
+            & + .ant-btn {
+                border-left: 1px solid @color-grey-light;
+            }
+        }
+    }
+}
+
+//卡片
+.ant-row {
+    &.no-padding [class*='ant-col'], .no-padding [class*='ant-col'], [class*='ant-col'].ant-form-item-control-wrapper {
+        padding: 0;
+    }
+    [class*='ant-col'] {
+        padding: @widthSmall;
+    }
+}
+
+.ant-select {
+    min-width: 150px;
+}
+
+.ant-pagination-options .ant-select {
+    min-width: 100px;
+}
+
+.ant-modal-body {
+    padding: @widthPrimary;
+}
+
+.ant-form-explain {
+    position: absolute;
+}
+
+.confirm-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -190px;
+    width: 380px;
+    padding: @widthDouble;
+    background-color: rgba(50, 50, 50, .8);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.has-close-btn {
+    &.ant-btn-group {
+        margin-left: @widthSmall;
+        margin-right: @widthSmall;
+    }
+    &:hover .ant-btn, &.active .ant-btn {
+        color: #fff;
+        background-color: @primary-color;
+        border: 1px solid @primary-color;
+    }
+}
+
+.infinite-scroll {
+    //display: flex;
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.flex {
+    display: box; /* OLD - Android 4.4- */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex-box:extend(.flex) {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    .center:extend(.flex-center) {
+    }
+    &.infinite-scroll {
+        overflow: hidden;
+    }
+    .flex-full {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.flex-row:extend(.flex) {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    &.center:extend(.flex-center) {
+    }
+}
+
+.flex-center:extend(.vertical-center,.horizontal-center) {
+}
+
+.vertical-center {
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.horizontal-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+[class*="flex-"].flex-wrap {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.ant-spin-nested-loading {
+    height: 100%;
+    .ant-spin-container {
+        height: 100%;
+    }
+}
+
+.keyframes(@name; @arguments) {
+    @-moz-keyframes @name { @arguments();
+    }
+    @-webkit-keyframes @name { @arguments();
+    }
+    @keyframes @name { @arguments();
+    }
+}
+
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform; /* note that you have @trasnform here */
+    -o-transform: @transform;
+    transform: @transform;
+
+}
+
+.keyframes(fade-in; { 0% {
+    opacity: 0;
+} 100% {
+      opacity: 1;
+  } });
+
+.window-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#root, .App, .ant-layout, .app-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.ant-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#root, .App, .ant-layout, .app-container, .ant-layout-content, .map-box, .map-container, .app-map-box {
+    height: 100%;
+    overflow: hidden;
+}
+
+.app-map-box {
+
+}
+
+.ant-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#root .ant-layout-content {
+    padding: 0 !important;
+}
+
+.marker-information {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #202123;
+    .name {
+        color: #888888;
+    }
+    p {
+        padding: 7px;
+    }
+    span {
+        padding-right: 10px;
+    }
+
+}
+
+.ant-form-item-control-wrapper {
+    .ant-checkbox-group {
+        padding-top: @widthSmall;
+    }
+}
+
+.ant-dropdown {
+    height: 200px;
+    ul {
+        height: 100%;
+        overflow-y: scroll;
+    }
+}
+
+.loading-page {
+    height: 100%;
+    overflow: hidden;
+    padding: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    .anticon {
+        font-size: 100px;
+        color: @primary-color;
+    }
+}
+.ant-spin-nested-loading > div > .ant-spin{
+    max-height: unset;
+}
+.hide{
+    position: absolute;
+    top:-3000px;
+}
